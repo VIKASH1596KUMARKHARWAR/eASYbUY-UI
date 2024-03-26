@@ -1,0 +1,101 @@
+npm install react@latest
+npm install react-dom@latest
+npm install react-router-dom@latest
+npm install react-icons@latest
+npm install react-fast-marquee@latest
+npm install @testing-library/jest-dom@latest
+npm install @testing-library/react@latest
+npm install @testing-library/user-event@latest
+npm install web-vitals@latest
+  
+npm install react-helmet --force
+npm install react-star-rating-component --legacy-peer-deps
+
+
+
+
+
+
+
+
+
+
+
+
+after creating the app we have installed the react-icons and router-dom
+
+# Outlet
+=======================
+// An <Outlet> should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
+
+
+ concept of Router
+============================
+
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            {/* The Home component will be rendered inside the Layout component */}
+            <Route index element={<Home />} />
+            {/* jis section ko  change  krna h usko index element se trigger krte h  */}
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    ------------------------
+
+jisko trigger krna h use  index element se trigger krte h
+
+Header
+Home---->(<about--->contact)//while triggerin the api
+Footer
+
+===============
+py== padding form top and bottom
+ps== l &  r 
+ps=left
+pe-==end
+
+===========================
+
+A breadcrumb, in terms of user interface design and navigation, is a type of secondary navigation scheme that reveals the user's location in a website or application. It typically appears horizontally at the top of a page and displays the hierarchy of the current page relative to the website's structure.
+Each part of the breadcrumb trail is typically clickable, allowing users to easily navigate back to any level of the hierarchy they wish. Breadcrumbs are especially useful for websites with deep hierarchical structures, e-commerce platforms, and content-heavy websites where users may need to backtrack through various levels of navigation. They provide context and orientation within the website, enhancing the overall user experience.
+
+
+
+
+execution and Defining of any Defined Router
+========================================
+humne ek BlogCard.js banaya --> aur usko TRIGGER KRNE KE LIYE humne ek app.js mein ek router banaya WITH path="blogs" aur uske baad humne click-triggerd ke liye Header mein jake -----> jha banaya h(header-->menu-link) mein Blogs pe Navlink to =="blogs" kr diya.
+
+How Navlink and Ui of Blog Works? 
+----------------------------------
+Humne pehle ek BlogCard.js(ek component) Banaya jsme Ui OF the Bolg Card HogA AUR uske baad humene ek Blog.js { ek page banaya jo ki ek seperate display screen h (of our webApp) on which we can move to By clicking on the Blog at menu-link }
+
+Yaha Blog.js mein hum kevel structure of this  page  banayenge  and hum card ki ui BlogCard.js component's   se utha lenge............!!!!
+
+======================================
+
+ working with the PROPS.........
+
+ [decrease the random repeated codes]
+ for this, we just need to make a function loke below (best example::)
+what we do is we just make a function adn that returns the structutre that's why this is in component
+
+ import React from "react";
+const CustomInput = (props) => {
+  const { type, name, placeholder, classname } = props;
+  return (
+    <div>
+      <input
+        type={type}
+        name={name}
+        placeholder={placeholder}
+        className={`form-control ${classname}`}
+      />
+    </div>
+  );
+};
+
+export default CustomInput;
